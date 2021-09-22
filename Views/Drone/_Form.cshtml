@@ -1,0 +1,28 @@
+﻿@model Drone
+
+<div class="form-group">
+    <label asp-for="Frame"></label>
+    <input asp-for="Frame" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="MotorKV">Kv do Motor</label>
+    <input asp-for="MotorKV" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Battery">Quantidade de celulas da bateria</label>
+    <input asp-for="Battery" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="DataFabricacao">Data Fabricacao</label>
+    <input asp-for="DataFabricacao" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Tipo"></label>
+    <select asp-for="Tipo" class="form-control" asp-items="@Html.GetEnumSelectList<TipoDrone>()">
+        <option>Selecione</option>
+    </select>
+</div>
+<div class="form-group">
+    <input asp-for="Ativo" />
+    <label asp-for="Ativo"></label>
+</div>

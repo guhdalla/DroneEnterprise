@@ -1,0 +1,67 @@
+﻿@model List<Drone>
+
+@{
+    ViewData["Title"] = "Drones";
+}
+
+<h1>Drones Disponíveis</h1>
+
+<mensagem texto="@TempData["msg"]"></mensagem>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Frame</th>
+        <th>Kv do Motor</th>
+        <th>Quantidade de celulas da bateria</th>
+        <th>Data Fabricacao</th>
+        <th>Tipo de Drone</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Frame</td>
+            <td>@item.MotorKV</td>
+            <td>@item.Battery</td>
+            <td>@item.DataFabricacao.ToShortDateString()</td> <!-- Exibir somente a data -->
+            <td>@item.Tipo</td>
+            <td>@(item.Ativo?"Ativo":"Inativo")</td>
+            <td>
+                <a asp-action="editar" asp-route-id="@item.Id" class="btn btn-sm btn-outline-dark">Editar</a>
+                <!-- Button trigger modal -->
+                <!-- No clique, define o ID do veículo no campo oculto do formulário do modal -->
+                <button onclick="idDrone.value = @item.Id" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                    Remover
+                </button>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-action="cadastrar" class="btn btn-primary">Cadastrar</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja realmente apagar o drone?
+            </div>
+            <div class="modal-footer">
+                <form asp-action="remover">
+                    <input type="hidden" name="id" id="idDrone"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="submit" class="btn btn-danger">Sim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@model Drone
+
+@{
+    ViewData["Title"] = "Cadastro de Drone";
+}
+
+<!-- Conteúdo adicionado na section Links do Layout -->
+@section Links {
+    <a asp-action="index" asp-controller="veiculo">Listar Drones</a>
+}
+
+<h1>Cadastro de Drone</h1>
+
+<mensagem texto="@TempData["msg"]"></mensagem>
+
+<form asp-action="cadastrar" >
+   
+    <partial name="_Form"/>
+
+    <botao texto="Salvar" class="btn btn-outline-success"></botao>
+   
+    <a asp-action="index" class="btn btn-outline-dark">Drones</a>
+</form>
+

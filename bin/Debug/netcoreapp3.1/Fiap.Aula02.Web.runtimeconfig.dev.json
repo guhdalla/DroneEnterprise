@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\guhda\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\guhda\\.nuget\\packages"
+    ]
+  }
+}
