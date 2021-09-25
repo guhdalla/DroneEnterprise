@@ -25,13 +25,11 @@
             <td>@item.Frame</td>
             <td>@item.MotorKV</td>
             <td>@item.Battery</td>
-            <td>@item.DataFabricacao.ToShortDateString()</td> <!-- Exibir somente a data -->
+            <td>@item.DataFabricacao.ToShortDateString()</td>
             <td>@item.Tipo</td>
             <td>@(item.Ativo?"Ativo":"Inativo")</td>
             <td>
                 <a asp-action="editar" asp-route-id="@item.Id" class="btn btn-sm btn-outline-dark">Editar</a>
-                <!-- Button trigger modal -->
-                <!-- No clique, define o ID do veículo no campo oculto do formulário do modal -->
                 <button onclick="idDrone.value = @item.Id" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
                     Remover
                 </button>
@@ -42,7 +40,6 @@
 
 <a asp-action="cadastrar" class="btn btn-primary">Cadastrar</a>
 
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
