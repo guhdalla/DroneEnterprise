@@ -1,5 +1,7 @@
-TURMA: 2TDSF
-GUSTAVO DALLA TORRE BIN - RM 85743
-BRUNO AMORIM ERMACORA MARTIN - RM 86066
-MURILO PEREIRA DA SILVA - RM 84319
-BRUNO DOS SANTOS DE BRITO - RM 86523
+**Nome dos alunos** 
+
+**Murilo Pereira - 84319** | **Bruno Brito - 86523** | **Gustavo Dalla - 85743** | **Bruno Ermacora - 86066**  
+
+**Turma:** **2TDSF**
+
+**Ano:** **2021**
